@@ -42,6 +42,7 @@ a {
 
 .container {
   padding-bottom: 50px;
+  max-height: 990px;
 }
 
 ul {
@@ -181,4 +182,38 @@ img {
     border-radius:12px / 125px;
     box-shadow:0 0 8px black;
   }
+
+/*********************/
+/****** Hover Animation *******/
+
+.imgWrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}
+
+.imgDescription {
+  /*position: absolute;*/
+  float: right;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 350px;
+  padding: 2px 2px 2px 2px;
+
+  visibility: hidden;
+  opacity: 0;
+  transition-delay: .5s; /* delays for 1 second */
+  -webkit-transition-delay: .3s; /* for Safari & Chrome */
+  -webkit-transition: visibility opacity 0.9s;
+}
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+}
+
 

@@ -118,59 +118,65 @@
   </head>
   <body>
     <div class= "container">
-      <h1><%= title %></h1>
+      <div class="row">
+        <h1><%= title %></h1>
 
-      <h5> "We pick it, you click it!" </h5>
-      <img src="./images/arrows.png">
-      <div class= "shovel">
-      <img src="./images/shovel.png">
-      </div>
+        <h5> "We pick it, you click it!" </h5>
 
-      <div class="or-spacer-vertical left">
-        <div class="mask"></div>
-      </div>
+        <div class="imgWrap">
+         <img src="./images/arrows.png">
+          <div class= "imgDescription">
+            <ul>
+              <li> Locally grown food tastes and looks better. </li>
+              <li> Local food is better for you. The shorter the time between the farm and your table, the less likely it is that nutrients will be lost.</li>
+              <li> Local food is safe. There's a unique kind of assurance that comes from looking a farmer in the eye at farmers' market or driving by the fields where your food comes from.</li>
+            </ul>
+          </div>
+        </div>
 
-      <h2>What are the benefits?</h2>
+        <div class="imgWrap_Shovel">
+         <img src="./images/shovel.png">
+          <div class= "imgDescription_Shovel">
+            <ul>
+              <li> Locally grown food tastes and looks better. </li>
+            </ul>
+          </div>
+        </div>
 
-      <div class= "facts">
-        <ul>
-      <li> Locally grown food tastes and looks better. </li>
-      <li> Local food is better for you. The shorter the time between the farm and your table, the less likely it is that nutrients will be lost.</li>
-      <li> Local food is safe. There's a unique kind of assurance that comes from looking a farmer in the eye at farmers' market or driving by the fields where your food comes from.</li>
-        </ul>
+        <div class="or-spacer-vertical left">
+          <div class="mask"></div>
+        </div>
       </div>
     </div>
 
-  <div class = "wrapper">
-    <div class = "row">
-      <div class = "col-lg-4 col-lg-offset-4">
-        <!-- MAYBE SOME CSS ANIMATION HERE -->
-        <h5>Search for farmers near you by inputing your address here:</h5>
+    <div class = "wrapper">
+      <div class = "row">
+        <div class = "col-lg-4 col-lg-offset-1">
+          <!-- MAYBE SOME CSS ANIMATION HERE -->
+          <h5>Search for farmers near you by inputing your address here:</h5>
+        </div>
+        <div class = "col-lg-2 col-lg-offset-1">
+          <h5>To narrow your search, give us a radius:</h5>
+        </div>
       </div>
-      <div class = "col-lg-2 col-lg-offset-1">
-        <h5>To narrow your search, give us a radius:</h5>
-      </div>
-    </div>
-    <div class ="row">
-      <div class = "col-lg-5 col-lg-offset-4">
-        <input id="address" class = "form-control" type="search" placeholder="Coleman River Rd, Clayton, GA 30525">
-      </div>
-      <div class = "dropdown col-lg-2">
-       <input id="radius" class = "form-control" type="number" placeholder="15 miles">
-      </div>
-      <div class = "col-lg-1">
-       <button class="btn btn-primary" type="button" onclick="initialize(), codeAddress(document.getElementById('address').value), fetchPlaces()">Find a farmer!</button>
+      <div class ="row">
+        <div class = "col-lg-5 col-lg-offset-1">
+          <input id="address" class = "form-control" type="search" placeholder="Coleman River Rd, Clayton, GA 30525">
+        </div>
+        <div class = "dropdown col-lg-2">
+         <input id="radius" class = "form-control" type="number" placeholder="15 miles">
+        </div>
+        <div class = "col-lg-1">
+         <button class="btn btn-primary" type="button" onclick="initialize(), codeAddress(document.getElementById('address').value)">Find a farmer!</button>
 
+        </div>
       </div>
+      <!-- TODO MAP NEEDS PADDING -->
+      <!-- OPTIONS FOR 1)DO SCALING 2)FIND DISTANCE FROM ADDRESS AND SORT -->
+      <!-- CALL FUNCTION TO LOAD MAP -->
+      <div id="map" class = "col-lg-offset-1" style="width: 450px; height: 500px;"></div>
     </div>
-  </div>
-  <!-- TODO MAP NEEDS PADDING -->
-  <div id="map" class = "col-lg-offset-1" style="width: 450px; height: 500px;"></div>
-</body>
-<!-- CALL FUNCTION TO LOAD MAP -->
+  </body>
 </html>
-
-<!-- OPTIONS FOR 1)DO SCALING 2)FIND DISTANCE FROM ADDRESS AND SORT -->
-
 
 
