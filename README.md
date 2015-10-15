@@ -22,7 +22,7 @@ Ian Narcisse-Cousar
 <img src="/public/images/Wireframe.JPG">
 
 ###Links:
-Heroku:     http://farmconnect.herokuapp.com/
-Trello:      https://trello.com/b/85C4JfV7/project-3-user-stories
+[Heroku]     http://farmconnect.herokuapp.com/
+[Trello]      https://trello.com/b/85C4JfV7/project-3-user-stories
 
 
