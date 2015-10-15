@@ -16,7 +16,7 @@ var FarmerSchema = new Schema({
   },
   farm_name: String,
   products: [String],
-  organic: {type: Boolean, default: false}
+  standards: [String]
 });
 
 FarmerSchema.methods.encrypt = function(password) {

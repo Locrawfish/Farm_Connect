@@ -33,6 +33,13 @@ var allProducts = {
     { name: 'milk', label: 'Milk' }
   ]
 };
+var standards = [
+  { name: 'organic', label: 'Certified Organic'},
+  { name: 'hairloom', label: 'Hairloom'},
+  { name: 'natural', label: 'Naturally Grown'} ,
+  { name: 'grassFed', label: 'Grass Fed'},
+  { name: 'grassFinished', label: 'Grass Finished'}
+];
 
 function makeError(res, message, status) {
   res.statusCode = status;
