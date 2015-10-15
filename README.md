@@ -4,22 +4,25 @@ Welcome to the Farm Connect, an app that connects users to farms and farmer's ma
 
 
 ##Tools used:
-*MongoDB
-*ExpressJS
-*NodeJS
-*Google Maps API
-*Photoshop
-*Illustrator
+* MongoDB
+* ExpressJS
+* NodeJS
+* Google Maps API
+* Passport Authentication
+* Photoshop
+* Illustrator
 
 
 ##Authors
-Loren Crawford,Guivia Moreira, and Ian Narcisse-Cousar
+Loren Crawford <br>
+Guivia Moreira <br>
+Ian Narcisse-Cousar
 
-##Images
-<img src="../../images/Wireframe.JPG">
+##Wireframe
+<img src="/public/images/Wireframe.JPG">
 
-###Links:
-Heroku:     https://quiet-dawn-1727.herokuapp.com/farmers/5617fd0f8aaeba1100e5fb5f
-Trello:      https://trello.com/b/85C4JfV7/project-3-user-stories
+##Links:
+Deployment: [Heroku](http://farmconnect.herokuapp.com/) <br>
+User Stories: [Trello](https://trello.com/b/85C4JfV7/project-3-user-stories)
 
 
