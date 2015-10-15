@@ -14,10 +14,8 @@ Welcome to the Farm Connect, an app that connects users to farms and farmer's ma
 
 
 ##Authors
-Loren Crawford
-
-Guivia Moreira
-
+Loren Crawford <br>
+Guivia Moreira <br>
 Ian Narcisse-Cousar
 
 ##Images
