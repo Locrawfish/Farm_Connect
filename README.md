@@ -15,11 +15,13 @@ Welcome to the Farm Connect, an app that connects users to farms and farmer's ma
 
 ##Authors
 Loren Crawford
+
 Guivia Moreira
+
 Ian Narcisse-Cousar
 
 ##Images
-<img src="../../images/Wireframe.JPG">
+<img src="/../images/Wireframe.JPG">
 
 ###Links:
 Heroku:     http://farmconnect.herokuapp.com/
