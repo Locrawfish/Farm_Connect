@@ -19,7 +19,7 @@ Guivia Moreira <br>
 Ian Narcisse-Cousar
 
 ##Images
-<img src="/master/public/images/Wireframe.JPG">
+<img src="/public/images/Wireframe.JPG">
 
 ###Links:
 Heroku:     http://farmconnect.herokuapp.com/
