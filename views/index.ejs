@@ -74,6 +74,22 @@
             </div>
           </div>
           <br />
+          <div class="row">
+            <h4>Farming Standards</h4>
+            <div class="col-lg-10 pull-right">
+              <% standards.forEach(function(s) { %>
+                <div class="col-xs-2 center-list">
+                  <label for="<%= s.name %>">
+                  <input type="checkbox"
+                         name='standards'
+                         value="<%= s.name %>"
+                         id="<%= s.name %>" %> >
+                  <%= s.label %>
+                  </label>
+                </div>
+              <% }) %>
+            </div>
+          </div>
           <br />
           <br />
           <div class="row">
