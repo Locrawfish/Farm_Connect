@@ -31,8 +31,8 @@ FarmerSchema.methods.getChecked = function(name) {
   return this.products.indexOf(name) !== -1 ? 'checked' : '';
 };
 
-FarmerSchema.methods.isOrganic = function() {
-  return this.organic;
+FarmerSchema.methods.getCheckedStnd = function(name) {
+  return this.standards.indexOf(name) !== -1 ? 'checked' : '';
 };
 
 module.exports = mongoose.model('Farmer', FarmerSchema);

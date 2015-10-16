@@ -36,6 +36,13 @@ var allProducts = {
   ]
 };
 
+var standards = [
+  { name: 'certified organic', label: 'Certified Organic'},
+  { name: 'hairloom', label: 'Hairloom'},
+  { name: 'naturally grown', label: 'Naturally Grown'} ,
+  { name: 'grass fed', label: 'Grass Fed'},
+  { name: 'grass finished', label: 'Grass Finished'}
+];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -44,7 +51,9 @@ router.get('/', function(req, res, next) {
     else{
       res.render('index', { title: 'FARM CONNECT',
                           farmer: currentFarmer,
-                          farmers: farmers, allProducts: allProducts
+                          farmers: farmers,
+                          allProducts: allProducts,
+                          standards: standards
       });
     }
   });

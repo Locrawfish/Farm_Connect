@@ -33,12 +33,13 @@ var allProducts = {
     { name: 'milk', label: 'Milk' }
   ]
 };
+
 var standards = [
-  { name: 'organic', label: 'Certified Organic'},
+  { name: 'certified organic', label: 'Certified Organic'},
   { name: 'hairloom', label: 'Hairloom'},
-  { name: 'natural', label: 'Naturally Grown'} ,
-  { name: 'grassFed', label: 'Grass Fed'},
-  { name: 'grassFinished', label: 'Grass Finished'}
+  { name: 'naturally grown', label: 'Naturally Grown'} ,
+  { name: 'grass fed', label: 'Grass Fed'},
+  { name: 'grass finished', label: 'Grass Finished'}
 ];
 
 function makeError(res, message, status) {
@@ -81,13 +82,17 @@ router.get('/new', authenticate, function(req, res, next) {
     products: [String],
     organic: false
     };
-  res.render('farmers/new', { farmer: farmer, checked: '', message: req.flash() });
+  res.render('farmers/new', { farmer: farmer, message: req.flash() });
 });
 
 // SHOW
 router.get('/:id', function(req, res, next) {
   Farmer.findById(req.params.id, function(err, farmer) {
-    res.render('farmers/show', { farmer: farmer, allProducts: allProducts, message: req.flash() } );
+    res.render('farmers/show', { farmer: farmer,
+                                 allProducts: allProducts,
+                                 standards: standards,
+                                 message: req.flash()
+                               } );
   });
 });
 
@@ -97,7 +102,11 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
   console.log('farmer: ' + farmer);
   if (!farmer) return next(makeError(res, 'Document not found', 404));
   console.log('My products: ' + farmer.products);
-  res.render('farmers/edit', { farmer: farmer, allProducts: allProducts, message: req.flash() } );
+  console.log('about to render with farmer:', farmer);
+  res.render('farmers/edit', { farmer: farmer,
+                               allProducts: allProducts,
+                               standards: standards,
+                               message: req.flash() } );
 });
 
 
@@ -107,7 +116,7 @@ router.put('/:id', function(req, res, next) {
   console.log('Farmer params: ' + JSON.stringify(req.body));
   Farmer.findById(req.params.id, function(err, farmer) {
     if (err) return next(err);
-     else {
+    else {
       farmer.name = req.body.name;
       farmer.local.email = req.body.email;
       farmer.phone = req.body.phone;
@@ -117,16 +126,43 @@ router.put('/:id', function(req, res, next) {
       farmer.address.zipcode = req.body.zipcode;
       farmer.farm_name = req.body.farm_name;
       farmer.products = [];
+      farmer.standards = [];
+      // Check input comes back as array
+      if (typeof req.body.products === 'string') {
+        farmer.products = [req.body.products];
+      }
+      else if (req.body.products) {
         req.body.products.forEach(function(p) {
-           farmer.products.push(p);
-         console.log('products ' + farmer.products);
+          farmer.products.push(p);
         });
+      }
+      else {
+        farmer.products = [];
+      }
+
+      // Check input comes back as array
+      if (typeof req.body.standards === 'string') {
+        farmer.standards = [req.body.standards];
+      }
+      // if (Object.prototype.toString.call(req.body.standards) === '[object String]') {
+      //   farmer.standards = [req.body.standards];
+      // }
+      else if (req.body.standards) {
+        req.body.standards.forEach(function(s) {
+          farmer.standards.push(s);
+        });
+      }
+      else {
+        farmer.standards = [];
+      }
+      console.log('standards ' + farmer.standards);
+
       farmer.save(function(err) {
         if (err) return next(err);
         // Redirect to profile after update
         res.redirect('/farmers/' + farmer._id);
       });
-  }
+    }
   });
 
 });
