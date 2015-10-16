@@ -22,13 +22,15 @@
 <div class="wrapper">
   <div class = 'row'>
     <div id = "location" class = "col-lg-5">
-      <h2><%= farmer.farm_name %></h2>
-      <p><b>Contact: </b><%= farmer.name %></p>
-      <p><b>Phone: </b><%= farmer.phone %></p>
+      <h2>CONTACT</h2>
+      <h3><%= farmer.farm_name %></h3>
+      <p><%= farmer.name %>
+      <br><%= farmer.phone %></p>
       <br><br>
-      <h2>Our Location: </h2>
-      <h3 id="farmAddress"><%= farmer.address.street %> </h3>
-      <h4><%= farmer.address.city %>, <%= farmer.address.state %> <%= farmer.address.zipcode %></h4>
+      <h3>Our Location</h3>
+      <h3 id="addressStreet"><%= farmer.address.street %><br>
+      <small id="addressCity">
+      <%= farmer.address.city %>, <%= farmer.address.state %> <%= farmer.address.zipcode %></small></h3>
     </div>
     <!-- <div class = "col-lg-6"> -->
       <div id="map" class = "col-lg-6" style="width: 640px; height: 450px;"></div>

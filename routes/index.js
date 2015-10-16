@@ -123,6 +123,7 @@ router.post('/search', function(req, res, next) {
       var products = req.body.products;
       var standards = req.body.standards;
 
+      // If any of the selections come back as srting, turn into array
       if (typeof products === 'string' && typeof standards === 'string') {
         products = [ products ];
         standards = [ standards ];
@@ -135,7 +136,6 @@ router.post('/search', function(req, res, next) {
       }
 
       if (products && standards) {
-
         Farmer.find({ 'products': { $in: products }, 'standards': { $in: standards } }, function(err, farmers) {
           farmers = farmers ? farmers : [];
         // console.log('farmers:', farmers);
