@@ -5,15 +5,17 @@
       <div class = "col-md-3">
         <h3>Our Standards</h3>
         <% farmer.standards.forEach(function(s) { %>
-          <%= s %>
-          <br>
+          <div class="capitalize">
+            <%= s %>
+          </div>
         <% }) %>
       </div>
-      <div class = "col-md-3">
+      <div class = "col-md-9">
         <h3>What We Have</h3>
         <% farmer.products.forEach(function(p) { %>
-          <%= p %>
-          <br>
+          <div class="capitalize col-xs-2">
+            <p class="glyphicon glyphicon-check"><%= p %></p>
+          </div>
         <% }) %>
       </div>
     </div>
@@ -23,12 +25,14 @@
   <div class = 'row'>
     <div id = "location" class = "col-lg-5">
       <h2>CONTACT</h2>
-      <h3><%= farmer.farm_name %></h3>
-      <p><%= farmer.name %>
-      <br><%= farmer.phone %></p>
+      <h3 class="glyphicon glyphicon-grain"><%= farmer.farm_name %></h3>
+      <br>
+      <p class="glyphicon glyphicon-user"> <%= farmer.name %></p>
+      <br>
+      <p class="glyphicon glyphicon-earphone"> <%= farmer.phone %></p>
       <br><br>
-      <h3>Our Location</h3>
-      <h3 id="addressStreet"><%= farmer.address.street %><br>
+      <h3 class="glyphicon glyphicon-map-marker">Our Location</h3>
+      <h3 id="addressStreet" class="address"><%= farmer.address.street %><br>
       <small id="addressCity">
       <%= farmer.address.city %>, <%= farmer.address.state %> <%= farmer.address.zipcode %></small></h3>
     </div>

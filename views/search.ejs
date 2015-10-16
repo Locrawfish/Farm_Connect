@@ -8,10 +8,10 @@
         <br>
         <p class="glyphicon glyphicon-earphone"> <%= farmer.phone %></p>
         <br><br>
-        <% if (farmer.standards !== []) { %>
+        <% if (farmer.standards) { %>
               <b>Our products are...</b><br>
               <% farmer.standards.forEach(function (s) { %>
-                <%= s %><br>
+                <span class="capitalize"><%= s %></span><br>
               <% }) %>
         <% } %>
         <br>
@@ -19,7 +19,7 @@
         <div class="row">
           <% farmer.products.forEach(function(p) { %>
             <div class="col-xs-4">
-              <p class="glyphicon glyphicon-check"><%= p %></p>
+              <p class="capitalize glyphicon glyphicon-check"><%= p %></p>
             </div>
           <% }) %> </p>
         </div>

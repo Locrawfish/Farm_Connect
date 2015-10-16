@@ -77,6 +77,10 @@ label {
   font-weight: 500;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 /*************************/
 /***** SEARCH AREA *******/
 .search-info {
@@ -115,11 +119,6 @@ label {
 
 /**********************/
 /*** SEARCH RESULTS ***/
-/*.results {
-  margin-right: 2px;
-  margin-bottom: 2px;
-}*/
-
 .grid-item {
   background-color: rgba(255, 255, 255, 0.78);
   border-radius: 5px;
@@ -130,6 +129,7 @@ label {
   height: auto;
   margin-right: 3px;
 }
+
 /**********************/
 /******* NAVBAR *******/
 .navbar {
@@ -154,6 +154,7 @@ label {
 .navbar-default .navbar-nav>li>a:hover {
   color: #00B7FF;
 }
+
 /**********************/
 /******** FORM ********/
 .wrapper {
@@ -239,6 +240,9 @@ label{
 .row-btn {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+.address {
+  padding-left: 20px;
 }
 
 /*********************/
