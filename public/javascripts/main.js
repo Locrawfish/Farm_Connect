@@ -48,7 +48,9 @@ function initialize() {
 
 // fetch & Geocode Address from profile page
 function fetchAddress() {
-      var address = document.getElementById('farmAddress').innerHTML;
+      var street = document.getElementById('addressStreet').innerHTML;
+      var city = document.getElementById('addressCity').innerHTML;
+      var address = street + city;
       console.log('This is the address to geocode: ' + address);
       geocodeAddress(address);
     }
@@ -95,7 +97,13 @@ function fetchAddress() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-// fetchAddress();
+// Grid styling for search results
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 2
+});
+
 // Autoscroll forms into view
 function scrollPage() {
   $('html, body').animate({
