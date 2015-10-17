@@ -96,18 +96,33 @@ function fetchAddress() {
 //     }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
+$(function(){
 // Grid styling for search results
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 2
+  $('.grid').masonry({
+    // options
+    itemSelector: '.grid-item',
+    columnWidth: 2
+  });
+
+  // Autoscroll forms into view
+  function scrollPage() {
+    $('html, body').animate({
+      scrollTop: $('#sign_up').offset().top
+      }, 600);
+  }
+
+  // Scroll to sections using 'a' links with #
+  $('a[href^="#"]').on('click',function (e) {
+    e.preventDefault();
+
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+    }, 800, 'swing');
+  });
+
+  scrollPage();
+
 });
-
-// Autoscroll forms into view
-function scrollPage() {
-  $('html, body').animate({
-    scrollTop: $('#sign_up').offset().top
-    }, 600);
-}
-

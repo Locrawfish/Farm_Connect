@@ -125,6 +125,7 @@ router.put('/:id', function(req, res, next) {
       farmer.address.state = req.body.state;
       farmer.address.zipcode = req.body.zipcode;
       farmer.farm_name = req.body.farm_name;
+      farmer.bio = req.body.bio;
       farmer.products = [];
       farmer.standards = [];
       // Check input comes back as array

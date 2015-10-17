@@ -26,7 +26,6 @@ var strategy = new LocalStrategy(
         newFarmer.address.city = req.body.city;
         newFarmer.address.state = req.body.state;
         newFarmer.address.zipcode = req.body.zipcode;
-        newFarmer.organic = req.body.organic;
         newFarmer.local.email = email;
         newFarmer.local.password = newFarmer.encrypt(password);
         console.log('Full request: ' + JSON.stringify(req.body));

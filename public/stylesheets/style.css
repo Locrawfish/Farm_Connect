@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Dosis:400,500,600,300|Neucha);
+
 html, body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 html {
-  background: url('../images/apples.jpg');
+  background: url('../images/apples.jpg') fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -34,14 +35,17 @@ h2, h5 {
 }
 
 .title hr {
-  max-width: 200px;
+  max-width: 125px;
   margin: 0 auto;
 }
 
 a {
   color: #00B7FF;
 }
-
+section {
+  max-height: 650px;
+  padding-bottom: 100px;
+}
 .container {
   padding-bottom: 10px;
   padding-top: 30px;
@@ -52,16 +56,6 @@ ul {
   color: white;
 }
 
-.facts {
-  width: 550px;
-  background-color:
-}
-
-.shovel {
-  float: right;
-  margin-top: 180px;
-}
-
 .content {
   font-size: 14px
   font-family: "Dosis", sans-serif;
@@ -70,6 +64,30 @@ ul {
   position: relative;
   margin: 0 auto 0;
   background-color: rgba(0, 0, 0, 0.5);
+
+}
+.left-section {
+  background-color: rgba(255, 255, 255, 0.78);
+  border-radius: 5px;
+}
+.right-section {
+  background-color: rgba(255, 255, 255, 0.78);
+  border-radius: 5px;
+}
+.chevron-section {
+  position: absolute;
+  width: 100%;
+}
+.chevron {
+  width: 100%;
+}
+.chevron img {
+  width: 90px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -100px;
+  left: 34.5%;
 
 }
 
@@ -111,11 +129,11 @@ label {
   margin: 0 auto;
 }
 
-.row_index {
+/*.row_index {
   margin-right: -150px;
   margin-left: -50px;
   margin-top: 80px;
-}
+}*/
 
 /**********************/
 /*** SEARCH RESULTS ***/
@@ -216,7 +234,9 @@ label{
 #sign_up h4 {
   padding-left: 20px;
 }
-
+.summary {
+  width: 380px;
+}
 
 /*********************/
 /****** PROFILE ******/
@@ -244,6 +264,9 @@ label{
 .address {
   padding-left: 20px;
 }
+.phone {
+  padding-left: 8px;
+}
 
 /*********************/
 /****** FOOTER *******/
@@ -270,95 +293,8 @@ img {
   float: left;
 }
 
-.or-spacer-vertical {
-  display:inline-block;
-  margin-top:100px; margin-left:100px; width:100px;
-  position:relative;
-}
-  .mask {
-    overflow: hidden;
-    width:20px;
-    height:200px;
-    //outline:1px solid pink;
-  }
-
-  &.left .mask: {
-    content:'';
-    display:block;
-    margin-left:-20px;
-    width:20px;
-    height:100%;
-    border-radius:12px / 125px;
-    box-shadow:0 0 8px black;
-  }
-
-/******************************/
-/****** Hover Animation *******/
-
-.imgWrap {
-  position: relative;
-  height: 250px;
-  width: 257px;
-  border-radius: .25px;
-}
-
-.imgDescription {
-  /*position: absolute;*/
-  float: right;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  width: 350px;
-  padding: 2px 2px 2px 2px;
-
-
-  visibility: hidden;
-  opacity: 0;
-  transition-delay: .2s; /* delays for 1 second */
-  -webkit-transition-delay: .2s; /* for Safari & Chrome */
-  -webkit-transition: visibility opacity 0.9s;
-}
-
-.imgWrap:hover .imgDescription {
-  visibility: visible;
-  opacity: 1;
-}
-
-.imgWrap_Shovel {
-  position: right;
-  float: right;
-  height: 250px;
-  width: 257px;
-}
-
-.imgDescription_Shovel {
-  /*position: absolute;*/
-  float: left;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  width: 350px;
-  padding: 2px 2px 2px 2px;
-
-  visibility: hidden;
-  opacity: 0;
-  transition-delay: .5s; /* delays for 1 second */
-  -webkit-transition-delay: .3s; /* for Safari & Chrome */
-  -webkit-transition: visibility opacity 0.9s;
-}
-
-.imgWrap_Shovel:hover .imgDescription_Shovel {
-  visibility: visible;
-  opacity: 1;
-}
-
-/*////our Pix////*/
+/********************/
+/**** ABOUT PAGE ****/
 
 .Pix {
   border-radius: 40px;
