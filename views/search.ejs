@@ -1,17 +1,17 @@
 <h2>SEARCH RESULTS</h2>
 <div class="container">
-  <div class="grid js-masonry">
+  <div class="results grid js-masonry">
     <% farmers.forEach(function(farmer){ %>
-      <div class="results col grid-item">
+      <div class="grid-item">
       <h3><a href="/farmers/<%= farmer._id %>"><%= farmer.farm_name %></a></h3>
         <p class="glyphicon glyphicon-map-marker"> <%= farmer.address.city %></p>
         <br>
         <p class="glyphicon glyphicon-earphone"> <%= farmer.phone %></p>
         <br><br>
-        <% if (farmer.standards !== []) { %>
+        <% if (farmer.standards) { %>
               <b>Our products are...</b><br>
               <% farmer.standards.forEach(function (s) { %>
-                <%= s %><br>
+                <span class="capitalize"><%= s %></span><br>
               <% }) %>
         <% } %>
         <br>
@@ -19,7 +19,7 @@
         <div class="row">
           <% farmer.products.forEach(function(p) { %>
             <div class="col-xs-4">
-              <p class="glyphicon glyphicon-check"><%= p %></p>
+              <p class="capitalize glyphicon glyphicon-check"><%= p %></p>
             </div>
           <% }) %> </p>
         </div>

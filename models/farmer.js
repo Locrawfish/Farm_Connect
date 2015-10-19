@@ -14,6 +14,7 @@ var FarmerSchema = new Schema({
     state: String,
     zipcode: Number
   },
+  bio: String,
   farm_name: String,
   products: [String],
   standards: [String]

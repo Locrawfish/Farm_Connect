@@ -1,16 +1,39 @@
-
- <!--  <body> -->
-<div class= "container">
- <h1><%= title %></h1>
-  <h5> "We pick it, you click it!" </h5>
-  <div class="row_index">
-      <div class="title col-lg-6 col-lg-offset-3"></div>
-      <div class="col-lg-6">  <img class= "boxes" src="./images/BAN.png">  </div>
-      <div class="col-lg-6">  <img class= "boxes2" src="./images/BAN2.png">  </div>
+<section>
+  <div class= "container title">
+   <h1><%= title %></h1>
+    <hr>
+    <h5> "We pick it, you click it!" </h5>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="float-img "><img src="../images/green-leaves-icon.png"></div>
+        <div class="col-lg-6">
+          <div class="equal-height left-section box-shadow--4dp">
+            <h2>WHY BUY LOCAL?</h2>
+            <p>Local food supports local families, builds community, keeps taxes down, and benefits
+            the environment and wildlife. It's an investment in the future.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="equal-height right-section box-shadow--4dp">
+            <h2 class="heart">ARE YOU A FARMER?</h2>
+            <p>With Farm Connect, consumers come to you! Broaden your customer base by signing up with us.
+            Connect with your consumers.
+            </p>
+          </div>
+        </div>
+       <!--  <div class="title col-lg-6 col-lg-offset-3"></div>
+        <div class="col-lg-6">  <img class= "boxes" src="./images/BAN.png">  </div>
+        <div class="col-lg-6">  <img class= "boxes2" src="./images/BAN2.png">  </div> -->
+      </div>
+    </div>
+    <div class="chevron-section">
+      <div class="chevron"><a href="#search"><img src="../images/chevron-down.png"/></a></div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class = "wrapper">
+<div id="search" class = "wrapper">
   <div class = "row">
     <div class = "search-info col-lg-6 col-lg-offset-3">
       <h2>Tell us what you're looking for.</h2>
@@ -20,13 +43,12 @@
 
   <div class ="search-info row">
     <hr>
-    <div class="col-lg-12">
-      <!-- HEADERS -->
-      <div class="row">
-        <div class = "col-md-6 col-md-offset-5">
-          <h3><b>AVAILABLE PRODUCTS</b></h3>
-        </div>
+    <div class="row">
+      <div class = "search-title">
+        <h3><b>AVAILABLE PRODUCTS</b></h3>
       </div>
+    </div>
+    <div class="col-lg-12">
       <!-- PRODUCT LIST -->
       <div class="search-details row">
         <form class="form" method="POST" action="/search %>">
@@ -94,7 +116,7 @@
           <br />
           <div class="row">
             <div class="text-center">
-              <button class="btn btn-primary btn-lg btn-search" type="submit">Find a Farmer!</button>
+              <button class="btn btn-info btn-lg btn-search" type="submit">Find a Farmer!</button>
             </div>
           </div>
         </form>
