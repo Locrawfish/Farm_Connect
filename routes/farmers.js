@@ -13,6 +13,7 @@ var allProducts = {
     { label: 'Venison', name: 'venison' }
   ],
   produce : [
+    { label: 'Apples', name: 'apples' },
     { label: 'Bananas', name: 'bananas' },
     { label: 'Carrots', name: 'carrots' },
     { label: 'Eggplant', name: 'eggplant' },

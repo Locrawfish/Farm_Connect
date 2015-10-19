@@ -6,11 +6,11 @@ function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(33.7489,-84.388);
   var mapOptions = {
-    zoom: 12,
+    zoom: 11,
     center: latlng
   }
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  var infoWindow = new google.maps.InfoWindow({map: map});
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  infoWindow = new google.maps.InfoWindow({map: map});
   // HTML5 geolocation. Get current location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -21,7 +21,7 @@ function initialize() {
 
       infoWindow.setPosition(pos);
       infoWindow.setContent('You Are Here');
-      map.setCenter(pos);
+      // map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -38,23 +38,24 @@ function initialize() {
         var marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location,
-          title: "Our Location"
+          title: "Our Location",
         });
+        map.setCenter(results[0].geometry.location, pos);
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
     });
   }
 
-// fetch & Geocode Address from profile page
-function fetchAddress() {
-      var street = document.getElementById('addressStreet').innerHTML;
-      var city = document.getElementById('addressCity').innerHTML;
-      var address = street + city;
-      console.log('This is the address to geocode: ' + address);
-      geocodeAddress(address);
-    }
-    fetchAddress();
+  // fetch & Geocode Address from profile page
+  function fetchAddress() {
+    var street = document.getElementById('addressStreet').innerHTML;
+    var city = document.getElementById('addressCity').innerHTML;
+    var address = street + city;
+    console.log('This is the address to geocode: ' + address);
+    geocodeAddress(address);
+  }
+  fetchAddress();
 }
 
 // function codeAddress(address) {
