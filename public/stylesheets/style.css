@@ -376,6 +376,9 @@ h6{
   font-family: "Dosis", sans-serif;
 }
 
+.contact a {
+  color: white;
+}
 
 .boxes1{
   position: left;
