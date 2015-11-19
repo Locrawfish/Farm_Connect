@@ -36,6 +36,13 @@ var allProducts = {
   ]
 };
 
+var standards = [
+  { name: 'certified organic', label: 'Certified Organic'},
+  { name: 'hairloom', label: 'Hairloom'},
+  { name: 'naturally grown', label: 'Naturally Grown'} ,
+  { name: 'grass fed', label: 'Grass Fed'},
+  { name: 'grass finished', label: 'Grass Finished'}
+];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -44,7 +51,9 @@ router.get('/', function(req, res, next) {
     else{
       res.render('index', { title: 'FARM CONNECT',
                           farmer: currentFarmer,
-                          farmers: farmers, allProducts: allProducts
+                          farmers: farmers,
+                          allProducts: allProducts,
+                          standards: standards
       });
     }
   });
@@ -112,15 +121,47 @@ router.post('/search', function(req, res, next) {
     if (err) return console.log(err);
     else {
       var products = req.body.products;
-      if (typeof products === 'string') {
+      var standards = req.body.standards;
+
+      // If any of the selections come back as srting, turn into array
+      if (typeof products === 'string' && typeof standards === 'string') {
+        products = [ products ];
+        standards = [ standards ];
+      }
+      if (typeof products === 'string'){
         products = [ products ];
       }
-      // console.log('products:', products);
-      Farmer.find({ 'products': { $in: products } }, function(err, farmers) {
-       farmers = farmers ? farmers : [];
-      // console.log('farmers:', farmers);
-      res.render('search', {farmers: farmers, farmer: currentFarmer });
-      });
+      if (typeof standards === 'string') {
+        standards = [ standards ];
+      }
+
+      if (products && standards) {
+        Farmer.find({ 'products': { $in: products }, 'standards': { $in: standards } }, function(err, farmers) {
+          farmers = farmers ? farmers : [];
+        // console.log('farmers:', farmers);
+          res.render('search', {farmers: farmers, farmer: currentFarmer });
+        });
+      }
+      else if (standards) {
+
+        console.log('standards: ' + standards)
+        Farmer.find({ 'standards': { $in: standards } }, function(err, farmers) {
+          farmers = farmers ? farmers : [];
+          res.render('search', {farmers: farmers, farmer: currentFarmer });
+        });
+      }
+      else {
+        Farmer.find({ 'products': { $in: products } }, function(err, farmers) {
+          farmers = farmers ? farmers : [];
+        // console.log('farmers:', farmers);
+          res.render('search', {farmers: farmers, farmer: currentFarmer });
+        });
+      }
+      // Farmer.find({ 'products': { $in: products }, 'standards': { $in: standards } }, function(err, farmers) {
+      //   farmers = farmers ? farmers : [];
+      // // console.log('farmers:', farmers);
+      //   res.render('search', {farmers: farmers, farmer: currentFarmer });
+      // });
     }
   });
 });

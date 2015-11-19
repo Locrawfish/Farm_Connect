@@ -3,14 +3,14 @@
   <div class="profile">
     <div class = "row">
       <div class = "col-md-3">
-        <h3>Profile</h3>
-        <p><b>Farmer: </b><%= farmer.name %></p>
-        <p><b>Farm Name: </b><%= farmer.farm_name %></p>
-        <p><b>Phone: </b><%= farmer.phone %></p>
-        <p><b>Organic: </b><%= farmer.organic %></p>
+        <h3>Our Standards</h3>
+        <% farmer.standards.forEach(function(s) { %>
+          <%= s %>
+          <br>
+        <% }) %>
       </div>
       <div class = "col-md-3">
-        <h3>Products:</h3>
+        <h3>What We Have</h3>
         <% farmer.products.forEach(function(p) { %>
           <%= p %>
           <br>
@@ -21,19 +21,26 @@
 </div>
 <div class="wrapper">
   <div class = 'row'>
-    <div id = "location" class = "col-lg-3">
-       <h2>Our Location: </h2>
-       <h3 id="farmAddress"><%= farmer.address.street %> <%= farmer.address.city %>, <%= farmer.address.state %> <%= farmer.address.zipcode %></h3>
+    <div id = "location" class = "col-lg-5">
+      <h2>CONTACT</h2>
+      <h3><%= farmer.farm_name %></h3>
+      <p><%= farmer.name %>
+      <br><%= farmer.phone %></p>
+      <br><br>
+      <h3>Our Location</h3>
+      <h3 id="addressStreet"><%= farmer.address.street %><br>
+      <small id="addressCity">
+      <%= farmer.address.city %>, <%= farmer.address.state %> <%= farmer.address.zipcode %></small></h3>
     </div>
-    <div class = "col-lg-6 col-lg-offset-1">
-      <div id="map" style="width: 700px; height: 450px;"></div>
-    </div>
+    <!-- <div class = "col-lg-6"> -->
+      <div id="map" class = "col-lg-6" style="width: 640px; height: 450px;"></div>
+    <!-- </div> -->
   </div>
   <div class="row-btn">
     <div class="col-md-8 col-md-offset-1">
      <a href="/" class="btn btn-primary">Back</a>
       <% if (currentFarmer) { %>
-        <a href="/farmers/<%= farmer._id %>/edit" class="btn btn-danger">Edit your details</a>
+        <a href="/farmers/<%= farmer._id %>/edit" class="btn btn-success">Edit your details</a>
       <% } %>
     </div>
   </div>
