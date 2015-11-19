@@ -142,21 +142,17 @@ ul {
   animation-name: right;
   animation-duration: 2s;
 }
-.chevron-section {
-  position: absolute;
-  width: 100%;
-}
-.chevron {
-  width: 100%;
-}
-.chevron img {
-  width: 90px;
-  height: 20px;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: -100px;
-  left: 36%;
 
+.chevron {
+  padding-left: 4%;
+}
+
+.chevron a{
+  color: white;
+}
+
+.chevron a:hover{
+  color: #9fdf9f;
 }
 
 /*************************/
@@ -176,11 +172,10 @@ ul {
 
 .search-details {
   max-width: 95%;
-  margin: auto;
-  padding-left: 35px;
+  padding-left: 25px;
 }
 .search-list {
-  margin-left: 100px;
+  margin-left: 50px;
   margin-right: -220px;
 }
 .btn-search {
