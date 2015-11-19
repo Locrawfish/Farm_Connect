@@ -1,29 +1,36 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="#">
         <% if (currentFarmer) { %>
-        <%= currentFarmer.farm_name %>
+           <a class="navbar-brand" href="/"><%= currentFarmer.farm_name %></a>
         <% } else { %>
-        <a class="navbar-brand" href="/">FARM CONNECT!</a>
+           <a class="navbar-brand" href="/">FARM CONNECT!</a>
         <% } %>
       </a>
     </div>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <% if (currentFarmer) { %>
-        <li><a href="/farmers/<%= farmer._id %>">Profile</a></li>
-      <% } %>
-      <% if (currentFarmer) { %>
-        <li><a href="/logout">Logout</a></li>
-      <% } else { %>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/signup">Signup</a></li>
-      <% } %>
-    </ul>
-
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="/">Home</a></li>
+        <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="/about">About</a></li>
+        <% if (currentFarmer) { %>
+          <li><a href="/farmers/<%= farmer._id %>">Profile</a></li>
+        <% } %>
+        <% if (currentFarmer) { %>
+          <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Signup</a></li>
+        <% } %>
+      </ul>
+    </div>
   </div>
 </nav>
 

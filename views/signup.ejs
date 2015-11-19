@@ -1,74 +1,81 @@
 <div id="form" class="container">
-  <h2>REGISTRATION</h2>
+  <h2  id = "sign_up">REGISTRATION</h2>
 </div>
 <!-- <div class="wrapper"> -->
-  <div id = "sign_up" class="authform">
+  <div class="authform">
     <form method="post" action="/signup">
       <div class="row left">
-        <h4> * All fields are required.</h4>
+        <p><em> * All fields are required. You can edit your information at any time.</em></p>
         <div class="col-md-6">
         <h3>Information</h3>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input class="form-control well" type="text" name="name" id="name" required autofocus>
-          </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input class="form-control well" type="text" name="name" id="name" required autofocus>
+        </div>
 
-          <div class="form-group">
-            <label for="farm_name">Farm Name:</label>
-            <input class="form-control" type="text" name="farm_name" id="farm_name" required>
-          </div>
+        <div class="form-group">
+          <label for="farm_name">Farm Name:</label>
+          <input class="form-control" type="text" name="farm_name" id="farm_name" required>
+        </div>
 
-          <div class="form-group">
-            <label for="farm_name">Phone Number:</label>
-            <input class="form-control" type="tel" name="phone" id="phone"
-                   pattern="^\d{3}-\d{3}-\d{4}$" placeholder="XXX-XXX-XXXX" required>
-          </div>
+        <div class="form-group">
+          <label for="farm_name">Phone Number:</label>
+          <input class="form-control" type="tel" name="phone" id="phone"
+                 pattern="^\d{3}-\d{3}-\d{4}$" placeholder="xxx-xxx-xxxx" required>
+        </div>
 
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input class="form-control" type="email" name="email" id="email"
-                   placeholder="example@domain.com" required>
-          </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input class="form-control" type="email" name="email" id="email"
+                 placeholder="example@domain.com" required>
+        </div>
 
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input class="form-control" type="password" name="password" pattern=".{8,}" title="Password must be eight or more characters" id="password" required>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input class="form-control" type="password" name="password" pattern=".{8,}" title="Password must be eight or more characters" id="password" required>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+        <h3>Address</h3>
+          <label for="street">Street:</label>
+          <input class="form-control" type="text" name="street" id="street" required>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input class="form-control" type="text" name="city" id="city" required>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="state">State:</label>
+              <input class="form-control" type="text" name="state" id="state" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="zipcode">Zipcode:</label>
+              <input class="form-control" type="text" pattern="\d{5,5}?"
+                     title="Zipcode must be five digits. Numbers only"
+                     name="zipcode" id="zipcode" required>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="form-group">
-          <h3>Address</h3>
-            <label for="street">Street:</label>
-            <input class="form-control" type="text" name="street" id="street" required>
-          </div>
-
-          <div class="form-group">
-            <label for="city">City:</label>
-            <input class="form-control" type="text" name="city" id="city" required>
-          </div>
-
-          <div class="form-group">
-            <label for="state">State:</label>
-            <input class="form-control" type="text" name="state" id="state" required>
-          </div>
-
-          <div class="form-group">
-            <label for="zipcode">Zipcode:</label>
-            <input class="form-control" type="text" pattern="\d{5,5}?" title="Zipcode must be five digits. Numbers only" name="zipcode" id="zipcode" required>
-          </div>
-
-          <div class="form-group">
-            <label for="organic">Are your products organic?</label>
-            <input class="form-control" type="checkbox" name="organic" id="organic">
-          </div>
+        <div class="form-group">
+          <label for="bio">Short Summary:</label>
+          <textarea class="form-control" type="text" rows="3" name="bio" id="bio"
+                    maxlength="250" placeholder="Tell us a story about your farm or history (250 character limit)"></textarea>
         </div>
 
-      <!-- <div class="row"> -->
-        <div class="col-md-4 col-md-offset-8">
-          <input class="btn-primary" type="submit">
-        </div>
-      <!-- </div> -->
+      </div>
+
+      <div class="col-md-4 col-md-offset-7">
+        <button class="btn btn-info btn-lg btn-search" type="submit">ADD YOUR PRODUCTS</button>
+      </div>
     </form>
   </div>
 <!-- </div> -->
