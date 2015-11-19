@@ -37,7 +37,7 @@ var allProducts = {
 
 var standards = [
   { name: 'certified organic', label: 'Certified Organic'},
-  { name: 'hairloom', label: 'Hairloom'},
+  { name: 'heirloom', label: 'Heirloom'},
   { name: 'naturally grown', label: 'Naturally Grown'} ,
   { name: 'grass fed', label: 'Grass Fed'},
   { name: 'grass finished', label: 'Grass Finished'}
